@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[BottomProgressIndicator scrollViewDidScroll:]:BottomProgressIndicator.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.progressThreshold">
+            </PersistentString>
+            <PersistentString
+               value = "self.originalTopInset">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[DetailViewController viewDidLoad]:DetailViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.orgDict">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[UIScrollView(PullToRefresh) addBottomPullToRefreshActionHandler:portraitContentInsetTop:landscapeInsetTop:]:UIScrollView+PullToRefresh.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.contentInset.bottom">
+            </PersistentString>
+            <PersistentString
+               value = "self.bounds.size.height">
+            </PersistentString>
+            <PersistentString
+               value = "self.contentInset.top">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[BottomProgressIndicator observeValueForKeyPath:ofObject:change:context:]:BottomProgressIndicator.m">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
