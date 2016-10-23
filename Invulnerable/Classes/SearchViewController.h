@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@import GoogleMobileAds;
+
 @interface WordCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *lblWord;
@@ -15,5 +17,6 @@
 @end
 
 @interface SearchViewController : UIViewController
+@property (weak, nonatomic) IBOutlet GADBannerView *bannerView;
 
 @end

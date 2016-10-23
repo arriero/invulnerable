@@ -42,8 +42,14 @@
     self.searchBar.delegate = self;
     
     [self.searchBar setBackgroundColor:[UIColor clearColor]];
-//    [self.searchBar setTranslucent:YES];
     [[self.searchBar.subviews objectAtIndex:0] setBackgroundColor:[UIColor clearColor]];
+    
+    self.bannerView.adUnitID = @"ca-app-pub-9597991151956696/9024895562";
+    self.bannerView.rootViewController = self;
+    GADRequest *request = [GADRequest request];
+    request.testDevices = @[kGADSimulatorID];
+    [self.bannerView loadRequest:request];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
