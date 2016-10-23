@@ -107,7 +107,7 @@
                             <constraint firstItem="Qzu-pr-323" firstAttribute="leading" secondItem="RdY-2J-5V0" secondAttribute="leading" id="zRC-m5-th9"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Search Word" id="thj-dI-r8t"/>
+                    <navigationItem key="navigationItem" title="Search Word" id="thj-dI-r8t" userLabel="Regresar"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="bannerView" destination="Myd-vB-hdq" id="Kef-SQ-qgm"/>
