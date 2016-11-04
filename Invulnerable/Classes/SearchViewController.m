@@ -7,7 +7,7 @@
 //
 
 #import "SearchViewController.h"
-#import "DetailViewController.h"
+#import "MeaningViewController.h"
 
 @implementation WordCell
 
@@ -113,8 +113,8 @@ NSString *const kWordCellId = @"WordCell";
     
     if ([segue.identifier isEqualToString:@"SearchDetailSegue"]) {
         
-        DetailViewController *detailViewController = segue.destinationViewController;
-        detailViewController.curIndex = self.selectedIndex;
+        MeaningViewController *meaningViewController = segue.destinationViewController;
+        meaningViewController.curIndex = self.selectedIndex;
     }
 }
 
