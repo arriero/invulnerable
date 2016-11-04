@@ -14,11 +14,10 @@
 		3F63C5391C46BC1E00D1DBF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F63C5381C46BC1E00D1DBF6 /* Assets.xcassets */; };
 		3F63C5471C46BC1E00D1DBF6 /* InvulnerableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F63C5461C46BC1E00D1DBF6 /* InvulnerableTests.m */; };
 		3F63C5521C46BC1E00D1DBF6 /* InvulnerableUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F63C5511C46BC1E00D1DBF6 /* InvulnerableUITests.m */; };
-		3F67034B1C47795500D65179 /* Dictionary.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F6703491C47795500D65179 /* Dictionary.plist */; };
-		3F67034C1C47795500D65179 /* Keyword.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F67034A1C47795500D65179 /* Keyword.plist */; };
 		3F7F26C61C48E627004F72BB /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F7F26C51C48E627004F72BB /* DetailViewController.m */; };
 		3FC7EA0F1C489336000B1C47 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC7EA0E1C489336000B1C47 /* SearchViewController.m */; };
 		833C7DE51DBC08B600078AEE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 833C7DE41DBC08B600078AEE /* GoogleService-Info.plist */; };
+		836C53551DCCB16F00DB3F82 /* Dictionary.plist in Resources */ = {isa = PBXBuildFile; fileRef = 836C53541DCCB16F00DB3F82 /* Dictionary.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,14 +51,13 @@
 		3F63C54D1C46BC1E00D1DBF6 /* OrigenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrigenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F63C5511C46BC1E00D1DBF6 /* InvulnerableUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InvulnerableUITests.m; sourceTree = "<group>"; };
 		3F63C5531C46BC1E00D1DBF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3F6703491C47795500D65179 /* Dictionary.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Dictionary.plist; sourceTree = "<group>"; };
-		3F67034A1C47795500D65179 /* Keyword.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Keyword.plist; sourceTree = "<group>"; };
 		3F7F26C41C48E627004F72BB /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		3F7F26C51C48E627004F72BB /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		3FC7EA0D1C489336000B1C47 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		3FC7EA0E1C489336000B1C47 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		6DC93DAE7EE1CF7080DA7E73 /* Pods-Origen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Origen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Origen/Pods-Origen.debug.xcconfig"; sourceTree = "<group>"; };
 		833C7DE41DBC08B600078AEE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		836C53541DCCB16F00DB3F82 /* Dictionary.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Dictionary.plist; sourceTree = "<group>"; };
 		83F58EAA1DBC5FEC00F806D9 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		83F58EAC1DBC603100F806D9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		83F58EAE1DBC604B00F806D9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -163,8 +161,7 @@
 		3F6703481C47795500D65179 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3F6703491C47795500D65179 /* Dictionary.plist */,
-				3F67034A1C47795500D65179 /* Keyword.plist */,
+				836C53541DCCB16F00DB3F82 /* Dictionary.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -284,7 +281,7 @@
 		3F63C5211C46BC1D00D1DBF6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = bailang;
 				TargetAttributes = {
 					3F63C5281C46BC1D00D1DBF6 = {
@@ -326,8 +323,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F67034B1C47795500D65179 /* Dictionary.plist in Resources */,
-				3F67034C1C47795500D65179 /* Keyword.plist in Resources */,
+				836C53551DCCB16F00DB3F82 /* Dictionary.plist in Resources */,
 				833C7DE51DBC08B600078AEE /* GoogleService-Info.plist in Resources */,
 				3F63C5391C46BC1E00D1DBF6 /* Assets.xcassets in Resources */,
 				3F63C5371C46BC1D00D1DBF6 /* Main.storyboard in Resources */,
@@ -466,8 +462,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: LongJi Hong (TMWVK8F9KH)";
@@ -512,8 +510,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: LongJi Hong (TMWVK8F9KH)";

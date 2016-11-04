@@ -17,8 +17,10 @@
 @property (assign) NSInteger minIndex;
 @property (assign) NSInteger maxIndex;
 
-@property (strong, nonatomic) NSArray* orgDict;
-@property (strong, nonatomic) NSMutableArray* curDict;
+@property (strong, nonatomic) NSArray* meanings;
+@property (strong, nonatomic) NSMutableArray* selectMeaning;
+@property (strong, nonatomic) NSArray* words;
+@property (strong, nonatomic) NSMutableArray* selectWord;
 
 @end
 
@@ -39,12 +41,16 @@
     self.maxIndex = self.curIndex;
     
     NSString *path = [[NSBundle mainBundle] pathForResource:@"Dictionary" ofType:@"plist"];
-    self.orgDict = [[NSArray alloc]initWithContentsOfFile:path];
+    NSDictionary *dict = [[NSDictionary alloc]initWithContentsOfFile:path];
     
-    self.curDict = [NSMutableArray array];
-    [self.curDict addObject:self.orgDict[self.curIndex]];
+    self.words = [dict objectForKey:@"NAME"];
+    self.meanings = [dict objectForKey:@"DESCRIPTION"];
     
-//    self.tableView.backgroundColor = [UIColor clearColor];
+    self.selectWord = [NSMutableArray array];
+    [self.selectWord addObject:self.words[self.curIndex]];
+    
+    self.selectMeaning = [NSMutableArray array];
+    [self.selectMeaning addObject:self.meanings[self.curIndex]];
     
 //    Because of self.automaticallyAdjustsScrollViewInsets you must add code below in viewWillApper
     
@@ -83,7 +89,7 @@
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
         [weakSelf.tableView beginUpdates];
-        [weakSelf.curDict insertObject:weakSelf.orgDict[weakSelf.minIndex] atIndex:0];
+        [weakSelf.selectMeaning insertObject:weakSelf.meanings[weakSelf.minIndex] atIndex:0];
         [weakSelf.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationBottom];
         [weakSelf.tableView endUpdates];
         
@@ -99,9 +105,9 @@
     int64_t delayInSeconds = 2.5;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        NSInteger lastIndex = weakSelf.curDict.count;
+        NSInteger lastIndex = weakSelf.selectMeaning.count;
         [weakSelf.tableView beginUpdates];
-        [weakSelf.curDict insertObject:weakSelf.orgDict[weakSelf.maxIndex] atIndex:lastIndex];
+        [weakSelf.selectMeaning insertObject:weakSelf.meanings[weakSelf.maxIndex] atIndex:lastIndex];
         [weakSelf.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:lastIndex inSection:0]] withRowAnimation:UITableViewRowAnimationBottom];
         [weakSelf.tableView endUpdates];
         
@@ -115,7 +121,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSUInteger count = self.curDict.count;
+    NSUInteger count = self.selectMeaning.count;
     return count > 0 ? count:1;
 }
 
@@ -145,9 +151,9 @@ NSString *const kDetailCell = @"DetailCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     DetailCell *cell = [tableView dequeueReusableCellWithIdentifier:kDetailCell];
     
-    NSString* description = self.curDict[indexPath.row];
+    NSString* description = self.selectMeaning[indexPath.row];
     cell.lblDescription.text = description;
-    
+        
     return cell;
 }
 /*

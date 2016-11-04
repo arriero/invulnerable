@@ -31,9 +31,10 @@
 {
     [super viewDidLoad];
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"Keyword" ofType:@"plist"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"Dictionary" ofType:@"plist"];
     
-    self.words = [[NSArray alloc]initWithContentsOfFile:path];
+    NSDictionary *dict = [[NSDictionary alloc]initWithContentsOfFile:path];
+    self.words = [dict objectForKey:@"NAME"];
     
     self.filterWords = [[NSMutableArray alloc] init];
     [self.filterWords addObjectsFromArray:self.words];

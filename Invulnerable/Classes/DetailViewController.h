@@ -15,6 +15,7 @@
 @end
 
 @interface DetailViewController : UITableViewController
+@property (weak, nonatomic) IBOutlet UILabel *lblTitle;
 
 @property (assign) NSInteger curIndex;
 
