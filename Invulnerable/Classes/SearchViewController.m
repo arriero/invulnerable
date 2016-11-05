@@ -42,8 +42,8 @@
     self.tableView.delegate = self;
     self.searchBar.delegate = self;
     
-    [self.searchBar setBackgroundColor:[UIColor clearColor]];
-    [[self.searchBar.subviews objectAtIndex:0] setBackgroundColor:[UIColor clearColor]];
+//    [self.searchBar setBackgroundColor:[UIColor clearColor]];
+//    [[self.searchBar.subviews objectAtIndex:0] setBackgroundColor:[UIColor clearColor]];
     
     self.bannerView.adUnitID = @"ca-app-pub-9597991151956696/9024895562";
     self.bannerView.rootViewController = self;
@@ -55,8 +55,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
-    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"topBar2"] forBarMetrics:UIBarMetricsDefault];
+//    [self.navigationController setNavigationBarHidden:YES animated:NO];
+//    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"topBar2"] forBarMetrics:UIBarMetricsDefault];
     
     [self.tableView reloadData];
 }
@@ -106,15 +106,14 @@ NSString *const kWordCellId = @"WordCell";
     NSString* selectedWord = self.filterWords[indexPath.row];
     self.selectedIndex = [self getIndexOfWord:selectedWord];
     
-    [self performSegueWithIdentifier:@"SearchDetailSegue" sender:nil];
+    [self performSegueWithIdentifier:@"showMeaning" sender:nil];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    if ([segue.identifier isEqualToString:@"SearchDetailSegue"]) {
-        
-        MeaningViewController *meaningViewController = segue.destinationViewController;
-        meaningViewController.curIndex = self.selectedIndex;
+    if ([segue.identifier isEqualToString:@"showMeaning"]){
+        MeaningViewController *targetController = segue.destinationViewController;
+        targetController.curIndex = self.selectedIndex;
     }
 }
 
@@ -138,7 +137,6 @@ NSString *const kWordCellId = @"WordCell";
 //            [self.filterWords addObjectsFromArray: self.words];
             [self.filterWords addObject: @" "];
         }
-
     }
     
     [self.tableView reloadData];

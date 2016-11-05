@@ -10,9 +10,6 @@
 
 @interface MeaningViewController ()
 
-@property (assign) NSInteger minIndex;
-@property (assign) NSInteger maxIndex;
-
 @property (strong, nonatomic) NSArray* meanings;
 @property (strong, nonatomic) NSMutableArray* selectMeaning;
 @property (strong, nonatomic) NSArray* words;
@@ -31,26 +28,16 @@
         self.curIndex = 0;
     }
     
-    self.minIndex = self.curIndex;
-    self.maxIndex = self.curIndex;
-    
     NSString *path = [[NSBundle mainBundle] pathForResource:@"Dictionary" ofType:@"plist"];
     NSDictionary *dict = [[NSDictionary alloc]initWithContentsOfFile:path];
     
     self.words = [dict objectForKey:@"NAME"];
-//    self.selectWord = [NSMutableArray array];
-//    [self.selectWord addObject:self.words[self.curIndex]];
     NSString* title = self.words[self.curIndex];
     lblTitle.text = title;
 
-    
     self.meanings = [dict objectForKey:@"DESCRIPTION"];
-//    self.selectMeaning = [NSMutableArray array];
-//    [self.selectMeaning addObject:self.meanings[self.curIndex]];
     NSString* description = self.meanings[self.curIndex];
     lblMeaning.text = description;
-    
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {

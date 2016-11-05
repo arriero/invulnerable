@@ -13,7 +13,7 @@
         <!--Navigation Controller-->
         <scene sceneID="ijp-vc-VEL">
             <objects>
-                <navigationController id="tf1-id-EoR" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationID" id="tf1-id-EoR" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aTz-z6-e66">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -27,10 +27,10 @@
             </objects>
             <point key="canvasLocation" x="-2049" y="908"/>
         </scene>
-        <!--Search Word-->
+        <!--Search View Controller-->
         <scene sceneID="CPM-PY-8Wm">
             <objects>
-                <viewController id="4Ft-fA-jzf" customClass="SearchViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchID" id="4Ft-fA-jzf" customClass="SearchViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Zkr-qP-sMn"/>
                         <viewControllerLayoutGuide type="bottom" id="oKS-ig-N2R"/>
@@ -69,7 +69,7 @@
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="lblWord" destination="uN4-3b-OIc" id="UvP-nF-wMl"/>
-                                            <segue destination="H2T-ga-vyo" kind="show" id="9a7-mw-u3u"/>
+                                            <segue destination="H2T-ga-vyo" kind="showDetail" identifier="showMeaning" action="showViewController:sender:" id="9a7-mw-u3u"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -117,7 +117,7 @@
                             <constraint firstItem="Qzu-pr-323" firstAttribute="leading" secondItem="RdY-2J-5V0" secondAttribute="leading" id="zRC-m5-th9"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Search Word" id="thj-dI-r8t" userLabel="Regresar"/>
+                    <navigationItem key="navigationItem" id="thj-dI-r8t" userLabel="Regresar"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="bannerView" destination="Myd-vB-hdq" id="Kef-SQ-qgm"/>
@@ -127,12 +127,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tgb-MQ-9kA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1610" y="908"/>
+            <point key="canvasLocation" x="-1311" y="905"/>
         </scene>
         <!--Meaning View Controller-->
         <scene sceneID="J5A-Fd-Mqh">
             <objects>
-                <viewController id="H2T-ga-vyo" customClass="MeaningViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MeaningID" id="H2T-ga-vyo" customClass="MeaningViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Dtn-Im-OsV"/>
                         <viewControllerLayoutGuide type="bottom" id="2ks-ny-NC5"/>
@@ -145,15 +145,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="lblTitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PdG-ar-A3n">
-                                <rect key="frame" x="158" y="109" width="52" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="lblTitle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PdG-ar-A3n">
+                                <rect key="frame" x="0.0" y="109" width="375" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="lblMeaning" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYS-ek-UrR">
-                                <rect key="frame" x="126" y="232" width="84" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="lblMeaning" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYS-ek-UrR">
+                                <rect key="frame" x="16" y="232" width="343" height="262"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -169,7 +169,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DiO-eJ-AWH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1153" y="908"/>
+            <point key="canvasLocation" x="-444" y="905"/>
         </scene>
     </scenes>
     <resources>
