@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+@import GoogleMobileAds;
 
 @interface MeaningViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *lblTitle;
 @property (weak, nonatomic) IBOutlet UILabel *lblMeaning;
 @property (assign) NSInteger curIndex;
+@property (weak, nonatomic) IBOutlet GADBannerView *bannerView2;
+
 
 @end

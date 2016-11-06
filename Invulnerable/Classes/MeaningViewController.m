@@ -38,6 +38,14 @@
     NSArray* meanings = [dict objectForKey:@"DESCRIPTION"];
     NSString* description = meanings[self.curIndex];
     lblMeaning.text = description;
+    
+    //Código Banner de Google
+    self.bannerView2.adUnitID = @"ca-app-pub-9597991151956696/9024895562";
+    self.bannerView2.rootViewController = self;
+    GADRequest *request = [GADRequest request];
+    request.testDevices = @[kGADSimulatorID];
+    [self.bannerView2 loadRequest:request];
+
 }
 
 - (void)didReceiveMemoryWarning {
