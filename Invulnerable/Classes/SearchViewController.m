@@ -30,9 +30,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    //Leer el archivo
     NSString *path = [[NSBundle mainBundle] pathForResource:@"Dictionary" ofType:@"plist"];
     
+    //Llenar los arreglos de Palabras y Palabras modificadas con lo que está en el archivo
     NSDictionary *dict = [[NSDictionary alloc]initWithContentsOfFile:path];
     self.words = [dict objectForKey:@"NAME"];
     
@@ -41,10 +42,9 @@
     
     self.tableView.delegate = self;
     self.searchBar.delegate = self;
-    
-//    [self.searchBar setBackgroundColor:[UIColor clearColor]];
-//    [[self.searchBar.subviews objectAtIndex:0] setBackgroundColor:[UIColor clearColor]];
-    
+
+
+    //Código Banner de Google
     self.bannerView.adUnitID = @"ca-app-pub-9597991151956696/9024895562";
     self.bannerView.rootViewController = self;
     GADRequest *request = [GADRequest request];
@@ -55,8 +55,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-//    [self.navigationController setNavigationBarHidden:YES animated:NO];
-//    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"topBar2"] forBarMetrics:UIBarMetricsDefault];
+    //Ocultar la barra de navegación
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
     
     [self.tableView reloadData];
 }
@@ -67,6 +67,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+//Identificar el índice de la palabra selecionada
 - (NSInteger)getIndexOfWord: (NSString*)wordText {
     for (int i = 0; i < self.words.count; i++) {
         NSString* orgWord = self.words[i];
@@ -79,10 +80,12 @@
 
 #pragma mark - Table view delegate
 
+// Altura de las celdas
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 30;
 }
 
+//Número de columnas en la tabla filtrada
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     NSUInteger count = self.filterWords.count;
@@ -91,6 +94,7 @@
 
 NSString *const kWordCellId = @"WordCell";
 
+//Llenar la tabla
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     WordCell *cell = [tableView dequeueReusableCellWithIdentifier:kWordCellId];
@@ -101,22 +105,28 @@ NSString *const kWordCellId = @"WordCell";
     return cell;
 }
 
+//El código cuando se selecciona la celda se pasó al de llamado a la otra pantalla para que no llamara dos veces.
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString* selectedWord = self.filterWords[indexPath.row];
-    self.selectedIndex = [self getIndexOfWord:selectedWord];
-    
-    [self performSegueWithIdentifier:@"showMeaning" sender:nil];
+//    NSString* selectedWord = self.filterWords[indexPath.row];
+//    self.selectedIndex = [self getIndexOfWord:selectedWord];
 }
 
+//Cuando se llama la otra pantalla
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    if ([segue.identifier isEqualToString:@"showMeaning"]){
-        MeaningViewController *targetController = segue.destinationViewController;
-        targetController.curIndex = self.selectedIndex;
-    }
+
+    //Conseguir el índice de la celda seleccionada
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    //Identificar la palabra
+    NSString* selectedWord = self.filterWords[indexPath.row];
+    //Conseguir el índice de la palabra en el archivo para enviarlo, no se utiliza el de la celda porque el índice actual es de una tabla filtrada
+    self.selectedIndex = [self getIndexOfWord:selectedWord];
+
+    MeaningViewController *targetController = segue.destinationViewController;
+    targetController.curIndex = self.selectedIndex;
 }
 
+//cuando cambian las letras en el panel de busqueda
 #pragma mark - searchBar delegate
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {

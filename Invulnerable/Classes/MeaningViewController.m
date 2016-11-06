@@ -10,11 +10,6 @@
 
 @interface MeaningViewController ()
 
-@property (strong, nonatomic) NSArray* meanings;
-@property (strong, nonatomic) NSMutableArray* selectMeaning;
-@property (strong, nonatomic) NSArray* words;
-@property (strong, nonatomic) NSMutableArray* selectWord;
-
 @end
 
 @implementation MeaningViewController
@@ -24,19 +19,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if(self.curIndex < 0 || self.curIndex >= 925) {
+/*    if(self.curIndex < 0 || self.curIndex >= 925) {
         self.curIndex = 0;
     }
-    
+*/
     NSString *path = [[NSBundle mainBundle] pathForResource:@"Dictionary" ofType:@"plist"];
     NSDictionary *dict = [[NSDictionary alloc]initWithContentsOfFile:path];
     
-    self.words = [dict objectForKey:@"NAME"];
-    NSString* title = self.words[self.curIndex];
+    NSArray* words = [dict objectForKey:@"NAME"];
+    NSString* title = words[self.curIndex];
     lblTitle.text = title;
 
-    self.meanings = [dict objectForKey:@"DESCRIPTION"];
-    NSString* description = self.meanings[self.curIndex];
+    NSArray* meanings = [dict objectForKey:@"DESCRIPTION"];
+    NSString* description = meanings[self.curIndex];
     lblMeaning.text = description;
 }
 

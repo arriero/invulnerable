@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Invulnerable/Classes/SearchViewController.m"
-            timestampString = "500001481.372235"
+            timestampString = "500129334.041616"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
             landmarkName = "-searchBar:textDidChange:"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Invulnerable/Classes/SearchViewController.m"
-            timestampString = "500002392.906297"
+            timestampString = "500129334.041616"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
             landmarkName = "-searchBar:textDidChange:"
             landmarkType = "7">
          </BreakpointContent>
