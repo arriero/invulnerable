@@ -19,10 +19,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-/*    if(self.curIndex < 0 || self.curIndex >= 925) {
+
+    //Asegurar que siempre muestre algo
+    if(self.curIndex < 0 || self.curIndex >= 925) {
         self.curIndex = 0;
     }
-*/
+    
+    //Aparecer la barra de navegación para regresar
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
+    
     NSString *path = [[NSBundle mainBundle] pathForResource:@"Dictionary" ofType:@"plist"];
     NSDictionary *dict = [[NSDictionary alloc]initWithContentsOfFile:path];
     

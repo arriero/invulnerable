@@ -27,7 +27,7 @@
             </objects>
             <point key="canvasLocation" x="-2049" y="908"/>
         </scene>
-        <!--Search View Controller-->
+        <!--Regresar-->
         <scene sceneID="CPM-PY-8Wm">
             <objects>
                 <viewController storyboardIdentifier="SearchID" id="4Ft-fA-jzf" customClass="SearchViewController" sceneMemberID="viewController">
@@ -117,7 +117,7 @@
                             <constraint firstItem="Qzu-pr-323" firstAttribute="leading" secondItem="RdY-2J-5V0" secondAttribute="leading" id="zRC-m5-th9"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="thj-dI-r8t" userLabel="Regresar"/>
+                    <navigationItem key="navigationItem" title="Regresar" id="thj-dI-r8t" userLabel="Regresar" colorLabel="IBBuiltInLabel-Red"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="bannerView" destination="Myd-vB-hdq" id="Kef-SQ-qgm"/>
@@ -145,22 +145,24 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="lblTitle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PdG-ar-A3n">
-                                <rect key="frame" x="0.0" y="109" width="375" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="lblTitle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PdG-ar-A3n">
+                                <rect key="frame" x="0.0" y="85" width="375" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="lblMeaning" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYS-ek-UrR">
-                                <rect key="frame" x="16" y="232" width="343" height="262"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="lblMeaning" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYS-ek-UrR">
+                                <rect key="frame" x="16" y="189" width="343" height="262"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PdG-ar-A3n" firstAttribute="top" secondItem="Dtn-Im-OsV" secondAttribute="bottom" constant="65" id="SjG-aJ-FuR"/>
+                            <constraint firstItem="gYS-ek-UrR" firstAttribute="top" secondItem="PdG-ar-A3n" secondAttribute="bottom" constant="83" id="fxS-pm-bcj"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="lblMeaning" destination="gYS-ek-UrR" id="ecI-md-SGP"/>
@@ -175,4 +177,5 @@
     <resources>
         <image name="background" width="375" height="667"/>
     </resources>
+    <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
 </document>
