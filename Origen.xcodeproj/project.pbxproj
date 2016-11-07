@@ -16,6 +16,7 @@
 		3F63C5521C46BC1E00D1DBF6 /* InvulnerableUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F63C5511C46BC1E00D1DBF6 /* InvulnerableUITests.m */; };
 		3FC7EA0F1C489336000B1C47 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC7EA0E1C489336000B1C47 /* SearchViewController.m */; };
 		8305A0A81DD0B41E0085E50C /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8305A0A71DD0B41E0085E50C /* InfoViewController.m */; };
+		8305A0AA1DD0D4A00085E50C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8305A0A91DD0D4A00085E50C /* Launch Screen.storyboard */; };
 		833C7DE51DBC08B600078AEE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 833C7DE41DBC08B600078AEE /* GoogleService-Info.plist */; };
 		836C53551DCCB16F00DB3F82 /* Dictionary.plist in Resources */ = {isa = PBXBuildFile; fileRef = 836C53541DCCB16F00DB3F82 /* Dictionary.plist */; };
 		836C535E1DCCC22400DB3F82 /* MeaningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 836C535D1DCCC22400DB3F82 /* MeaningViewController.m */; };
@@ -57,6 +58,7 @@
 		6DC93DAE7EE1CF7080DA7E73 /* Pods-Origen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Origen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Origen/Pods-Origen.debug.xcconfig"; sourceTree = "<group>"; };
 		8305A0A61DD0B41E0085E50C /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		8305A0A71DD0B41E0085E50C /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
+		8305A0A91DD0D4A00085E50C /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		833C7DE41DBC08B600078AEE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		836C53541DCCB16F00DB3F82 /* Dictionary.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Dictionary.plist; sourceTree = "<group>"; };
 		836C535C1DCCC22400DB3F82 /* MeaningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeaningViewController.h; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				3F63C5381C46BC1E00D1DBF6 /* Assets.xcassets */,
 				3F63C53D1C46BC1E00D1DBF6 /* Info.plist */,
 				3F63C52C1C46BC1D00D1DBF6 /* Supporting Files */,
+				8305A0A91DD0D4A00085E50C /* Launch Screen.storyboard */,
 			);
 			path = Invulnerable;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				836C53551DCCB16F00DB3F82 /* Dictionary.plist in Resources */,
 				833C7DE51DBC08B600078AEE /* GoogleService-Info.plist in Resources */,
 				3F63C5391C46BC1E00D1DBF6 /* Assets.xcassets in Resources */,
+				8305A0AA1DD0D4A00085E50C /* Launch Screen.storyboard in Resources */,
 				3F63C5371C46BC1D00D1DBF6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -558,6 +562,7 @@
 			baseConfigurationReference = 6DC93DAE7EE1CF7080DA7E73 /* Pods-Origen.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Invulnerable/Info.plist;
@@ -574,6 +579,7 @@
 			baseConfigurationReference = D191726DB5CE528F7F86B40B /* Pods-Origen.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Invulnerable/Info.plist;
