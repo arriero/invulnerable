@@ -146,12 +146,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="3XJ-b7-usK">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lblMeaning" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYS-ek-UrR">
-                                <rect key="frame" x="21" y="172" width="343" height="437"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Po0-3f-WB6" customClass="GADBannerView">
                                 <rect key="frame" x="27" y="617" width="320" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -161,7 +155,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lblTitle" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PdG-ar-A3n">
-                                <rect key="frame" x="162" y="85" width="51.5" height="22"/>
+                                <rect key="frame" x="162" y="50" width="51.5" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="rdO-Q8-Ol4"/>
                                 </constraints>
@@ -169,24 +163,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="hjV-HJ-gOl">
+                                <rect key="frame" x="21" y="102" width="333" height="507"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Po0-3f-WB6" firstAttribute="top" secondItem="gYS-ek-UrR" secondAttribute="bottom" constant="8" id="Ad6-fA-HgE"/>
+                            <constraint firstItem="hjV-HJ-gOl" firstAttribute="leading" secondItem="MUl-vU-9Cl" secondAttribute="leadingMargin" constant="5" id="CPt-A1-7Hq"/>
                             <constraint firstItem="Po0-3f-WB6" firstAttribute="centerX" secondItem="MUl-vU-9Cl" secondAttribute="centerX" id="F4E-81-vS6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hjV-HJ-gOl" secondAttribute="trailing" constant="5" id="Y9X-1d-BLX"/>
                             <constraint firstItem="3XJ-b7-usK" firstAttribute="centerY" secondItem="MUl-vU-9Cl" secondAttribute="centerY" id="agz-9K-Esz"/>
-                            <constraint firstItem="gYS-ek-UrR" firstAttribute="leading" secondItem="MUl-vU-9Cl" secondAttribute="leadingMargin" constant="5" id="k4w-wE-uky"/>
+                            <constraint firstItem="Po0-3f-WB6" firstAttribute="top" secondItem="hjV-HJ-gOl" secondAttribute="bottom" constant="8" id="bs1-HE-Jio"/>
                             <constraint firstItem="2ks-ny-NC5" firstAttribute="top" secondItem="Po0-3f-WB6" secondAttribute="bottom" id="l6L-Uc-lwI"/>
-                            <constraint firstItem="gYS-ek-UrR" firstAttribute="top" secondItem="PdG-ar-A3n" secondAttribute="bottom" constant="65" id="lQg-Cb-pAd"/>
-                            <constraint firstItem="gYS-ek-UrR" firstAttribute="trailing" secondItem="MUl-vU-9Cl" secondAttribute="trailingMargin" constant="5" id="mml-IA-Hjy"/>
                             <constraint firstItem="3XJ-b7-usK" firstAttribute="centerX" secondItem="MUl-vU-9Cl" secondAttribute="centerX" id="ojc-vy-4Pu"/>
+                            <constraint firstItem="hjV-HJ-gOl" firstAttribute="top" secondItem="PdG-ar-A3n" secondAttribute="bottom" constant="30" id="rwp-0E-nGa"/>
                             <constraint firstItem="PdG-ar-A3n" firstAttribute="centerX" secondItem="MUl-vU-9Cl" secondAttribute="centerX" id="vr8-uV-hiu"/>
-                            <constraint firstItem="PdG-ar-A3n" firstAttribute="top" secondItem="Dtn-Im-OsV" secondAttribute="bottom" constant="65" id="zn5-iL-IE9"/>
+                            <constraint firstItem="PdG-ar-A3n" firstAttribute="top" secondItem="Dtn-Im-OsV" secondAttribute="bottom" constant="30" id="zn5-iL-IE9"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="bannerView2" destination="Po0-3f-WB6" id="O8O-Iu-vEe"/>
-                        <outlet property="lblMeaning" destination="gYS-ek-UrR" id="ecI-md-SGP"/>
+                        <outlet property="lblMeaning" destination="hjV-HJ-gOl" id="UZS-DR-MaI"/>
                         <outlet property="lblTitle" destination="PdG-ar-A3n" id="OLB-N9-BeO"/>
                     </connections>
                 </viewController>
