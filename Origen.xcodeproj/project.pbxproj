@@ -15,6 +15,7 @@
 		3F63C5471C46BC1E00D1DBF6 /* InvulnerableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F63C5461C46BC1E00D1DBF6 /* InvulnerableTests.m */; };
 		3F63C5521C46BC1E00D1DBF6 /* InvulnerableUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F63C5511C46BC1E00D1DBF6 /* InvulnerableUITests.m */; };
 		3FC7EA0F1C489336000B1C47 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC7EA0E1C489336000B1C47 /* SearchViewController.m */; };
+		8305A0A81DD0B41E0085E50C /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8305A0A71DD0B41E0085E50C /* InfoViewController.m */; };
 		833C7DE51DBC08B600078AEE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 833C7DE41DBC08B600078AEE /* GoogleService-Info.plist */; };
 		836C53551DCCB16F00DB3F82 /* Dictionary.plist in Resources */ = {isa = PBXBuildFile; fileRef = 836C53541DCCB16F00DB3F82 /* Dictionary.plist */; };
 		836C535E1DCCC22400DB3F82 /* MeaningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 836C535D1DCCC22400DB3F82 /* MeaningViewController.m */; };
@@ -54,6 +55,8 @@
 		3FC7EA0D1C489336000B1C47 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		3FC7EA0E1C489336000B1C47 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		6DC93DAE7EE1CF7080DA7E73 /* Pods-Origen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Origen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Origen/Pods-Origen.debug.xcconfig"; sourceTree = "<group>"; };
+		8305A0A61DD0B41E0085E50C /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		8305A0A71DD0B41E0085E50C /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		833C7DE41DBC08B600078AEE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		836C53541DCCB16F00DB3F82 /* Dictionary.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Dictionary.plist; sourceTree = "<group>"; };
 		836C535C1DCCC22400DB3F82 /* MeaningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeaningViewController.h; sourceTree = "<group>"; };
@@ -169,6 +172,7 @@
 		3FC7EA0B1C4892EA000B1C47 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				8305A0A51DD0B3D60085E50C /* InfoViewController */,
 				3FC7EA101C48956B000B1C47 /* MeaningViewController */,
 				3FC7EA0C1C489306000B1C47 /* SearchViewController */,
 			);
@@ -200,6 +204,15 @@
 				D191726DB5CE528F7F86B40B /* Pods-Origen.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		8305A0A51DD0B3D60085E50C /* InfoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8305A0A61DD0B41E0085E50C /* InfoViewController.h */,
+				8305A0A71DD0B41E0085E50C /* InfoViewController.m */,
+			);
+			name = InfoViewController;
 			sourceTree = "<group>";
 		};
 		D4750182DEC8BEC72CE8EB3D /* Frameworks */ = {
@@ -402,6 +415,7 @@
 				3F63C5311C46BC1D00D1DBF6 /* AppDelegate.m in Sources */,
 				836C535E1DCCC22400DB3F82 /* MeaningViewController.m in Sources */,
 				3FC7EA0F1C489336000B1C47 /* SearchViewController.m in Sources */,
+				8305A0A81DD0B41E0085E50C /* InfoViewController.m in Sources */,
 				3F63C52E1C46BC1D00D1DBF6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -27,10 +27,79 @@
             </objects>
             <point key="canvasLocation" x="-2049" y="908"/>
         </scene>
-        <!--Regresar-->
+        <!--Info View Controller-->
+        <scene sceneID="Tb5-Rs-T3v">
+            <objects>
+                <viewController id="vVM-ag-ec6" userLabel="Info View Controller" customClass="InfoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ovl-Nw-Jg3"/>
+                        <viewControllerLayoutGuide type="bottom" id="oON-hq-t05"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5V6-ya-BKj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="bJ8-3B-yML">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MdO-AD-Vf1">
+                                <rect key="frame" x="21" y="25" width="30" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="OK"/>
+                                <connections>
+                                    <action selector="btClose:" destination="vVM-ag-ec6" eventType="touchUpInside" id="opK-wF-KOr"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDj-tK-VKo">
+                                <rect key="frame" x="5" y="419.5" width="365" height="143.5"/>
+                                <string key="text">Somos la unión de Espiritú, Mente y Cuerpo y todo lo que vivimos está integramente relacionado con nuestros tres componentes. 
+
+Las enfermedades no son la causa sino el resultado de algo que nos está afectando, sí entendemos la causa de estas, podemos tratarlas de forma más efectiva.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMP-Ud-A5d">
+                                <rect key="frame" x="5" y="578" width="365" height="84"/>
+                                <string key="text">Parte de la información presentada en la aplicación, ha sido tomada de reconocidos escritores cómo: Jaques Martel, Lisa Bourbeau, Luisa L. Hay, Enric Corbera, entre otros. Sí te interesa el tema, te invito a consultar sus obras.</string>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Origen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DvK-jQ-Jxf">
+                                <rect key="frame" x="143.5" y="90" width="87" height="32.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="gDj-tK-VKo" secondAttribute="trailing" constant="5" id="2nb-te-wYr"/>
+                            <constraint firstAttribute="trailing" secondItem="bJ8-3B-yML" secondAttribute="trailing" id="5lR-ab-Xlg"/>
+                            <constraint firstItem="MdO-AD-Vf1" firstAttribute="leading" secondItem="5V6-ya-BKj" secondAttribute="leadingMargin" constant="5" id="LEW-c4-sB7"/>
+                            <constraint firstItem="oON-hq-t05" firstAttribute="top" secondItem="bJ8-3B-yML" secondAttribute="bottom" id="Njv-wj-1Yj"/>
+                            <constraint firstItem="gDj-tK-VKo" firstAttribute="leading" secondItem="5V6-ya-BKj" secondAttribute="leading" constant="5" id="Pa4-8i-XJW"/>
+                            <constraint firstItem="oON-hq-t05" firstAttribute="top" secondItem="MMP-Ud-A5d" secondAttribute="bottom" constant="5" id="Ya5-C8-jbR"/>
+                            <constraint firstItem="MMP-Ud-A5d" firstAttribute="top" secondItem="gDj-tK-VKo" secondAttribute="bottom" constant="15" id="ZT3-Ed-P2L"/>
+                            <constraint firstItem="MMP-Ud-A5d" firstAttribute="leading" secondItem="5V6-ya-BKj" secondAttribute="leading" constant="5" id="ZT4-cK-eDe"/>
+                            <constraint firstAttribute="trailing" secondItem="MMP-Ud-A5d" secondAttribute="trailing" constant="5" id="fT1-zL-HbJ"/>
+                            <constraint firstItem="DvK-jQ-Jxf" firstAttribute="top" secondItem="ovl-Nw-Jg3" secondAttribute="bottom" constant="70" id="gON-qh-Wdr"/>
+                            <constraint firstItem="bJ8-3B-yML" firstAttribute="top" secondItem="5V6-ya-BKj" secondAttribute="top" id="jFK-sO-gre"/>
+                            <constraint firstItem="MdO-AD-Vf1" firstAttribute="top" secondItem="5V6-ya-BKj" secondAttribute="topMargin" constant="25" id="mtX-Y0-E6q"/>
+                            <constraint firstItem="DvK-jQ-Jxf" firstAttribute="centerX" secondItem="5V6-ya-BKj" secondAttribute="centerX" id="r1y-yD-cNg"/>
+                            <constraint firstItem="bJ8-3B-yML" firstAttribute="leading" secondItem="5V6-ya-BKj" secondAttribute="leading" id="tqq-jE-xH1"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LM5-EE-EBc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-444" y="236.13193403298354"/>
+        </scene>
+        <!--Search-->
         <scene sceneID="CPM-PY-8Wm">
             <objects>
-                <viewController storyboardIdentifier="SearchID" id="4Ft-fA-jzf" customClass="SearchViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchID" id="4Ft-fA-jzf" userLabel="Search" customClass="SearchViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Zkr-qP-sMn"/>
                         <viewControllerLayoutGuide type="bottom" id="oKS-ig-N2R"/>
@@ -99,6 +168,11 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WsQ-Zv-d8V">
                                 <rect key="frame" x="21" y="30" width="22" height="22"/>
+                                <connections>
+                                    <segue destination="vVM-ag-ec6" kind="popoverPresentation" identifier="showInfo" popoverAnchorView="WsQ-Zv-d8V" id="twA-yx-rHB">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -165,12 +239,13 @@
                                     <constraint firstAttribute="height" constant="22" id="rdO-Q8-Ol4"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="hjV-HJ-gOl">
                                 <rect key="frame" x="21" y="102" width="333" height="507"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -204,6 +279,7 @@
     </scenes>
     <resources>
         <image name="background" width="375" height="667"/>
+        <image name="splash" width="375" height="667"/>
     </resources>
     <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
 </document>

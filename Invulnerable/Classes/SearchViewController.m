@@ -8,6 +8,7 @@
 
 #import "SearchViewController.h"
 #import "MeaningViewController.h"
+#import "InfoViewController.h"
 
 @implementation WordCell
 
@@ -122,15 +123,22 @@ NSString *const kWordCellId = @"WordCell";
 //Cuando se llama la otra pantalla
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 
-    //Conseguir el índice de la celda seleccionada
-    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-    //Identificar la palabra
-    NSString* selectedWord = self.filterWords[indexPath.row];
-    //Conseguir el índice de la palabra en el archivo para enviarlo, no se utiliza el de la celda porque el índice actual es de una tabla filtrada
-    self.selectedIndex = [self getIndexOfWord:selectedWord];
-
-    MeaningViewController *targetController = segue.destinationViewController;
-    targetController.curIndex = self.selectedIndex;
+    if ([[segue identifier] isEqualToString:@"showInfo"]){
+        InfoViewController *targetController = segue.destinationViewController;
+    }
+    else{
+        //Conseguir el índice de la celda seleccionada
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+        //Identificar la palabra
+        NSString* selectedWord = self.filterWords[indexPath.row];
+        //Conseguir el índice de la palabra en el archivo para enviarlo, no se utiliza el de la celda porque el índice actual es de una tabla filtrada
+        self.selectedIndex = [self getIndexOfWord:selectedWord];
+        
+        MeaningViewController *targetController = segue.destinationViewController;
+        targetController.curIndex = self.selectedIndex;
+    }
+    
+    
 }
 
 //cuando cambian las letras en el panel de busqueda
