@@ -44,7 +44,6 @@
     self.tableView.delegate = self;
     self.searchBar.delegate = self;
 
-
     //Código Banner de Google
     self.bannerView.adUnitID = @"ca-app-pub-9597991151956696/9024895562";
     self.bannerView.rootViewController = self;
