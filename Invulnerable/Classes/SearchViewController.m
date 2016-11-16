@@ -19,7 +19,6 @@
 @property (assign) NSInteger selectedIndex;
 @property (strong, nonatomic) NSString* selectedWord;
 
-@property (strong, nonatomic) NSArray* words;
 @property (strong, nonatomic) NSArray* keys;
 
 @property (strong, nonatomic) NSMutableArray* filterWords;
@@ -34,23 +33,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     //Leer el archivo
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"Dictionary" ofType:@"plist"];
-    
-    //Llenar los arreglos de Palabras y Palabras modificadas con lo que está en el archivo
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"Dict" ofType:@"plist"];
     NSDictionary *dict = [[NSDictionary alloc]initWithContentsOfFile:path];
-    self.words = [dict objectForKey:@"NAME"];
-    
-    NSString *path2 = [[NSBundle mainBundle] pathForResource:@"Dict" ofType:@"plist"];
-    NSDictionary *dict2 = [[NSDictionary alloc]initWithContentsOfFile:path2];
-    self.keys = [dict2 allKeys];
+    self.keys = [dict allKeys];
 
     self.filterWords = [[NSMutableArray alloc] init];
     [self.filterWords addObjectsFromArray:self.keys];
     
     self.tableView.delegate = self;
     self.searchBar.delegate = self;
-
     
     //Código Banner de Google
     self.bannerView.adUnitID = @"ca-app-pub-9597991151956696/9024895562";
@@ -81,19 +74,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-//Identificar el índice de la palabra selecionada
-- (NSInteger)getIndexOfWord: (NSString*)wordText {
-    for (int i = 0; i < self.words.count; i++) {
-        NSString* orgWord = self.words[i];
-        if([orgWord isEqualToString: wordText]) {
-            return i;
-        }
-    }
-    return -1;
-}
-
 #pragma mark - Table view delegate
-
 // Altura de las celdas
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 30;
@@ -107,7 +88,6 @@
 }
 
 NSString *const kWordCellId = @"WordCell";
-
 //Llenar la tabla
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -137,16 +117,9 @@ NSString *const kWordCellId = @"WordCell";
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
         //Identificar la palabra
         self.selectedWord = self.filterWords[indexPath.row];
-        //Conseguir el índice de la palabra en el archivo para enviarlo, no se utiliza el de la celda porque el índice actual es de una tabla filtrada
-        self.selectedIndex = [self getIndexOfWord:self.selectedWord];
-        
         MeaningViewController *targetController = segue.destinationViewController;
-        targetController.curIndex = self.selectedIndex;
         targetController.selectedWord = self.selectedWord;
-
     }
-    
-    
 }
 
 //cuando cambian las letras en el panel de busqueda

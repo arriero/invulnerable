@@ -19,11 +19,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    //Asegurar que siempre muestre algo
-    if(self.curIndex < 0 || self.curIndex >= 925) {
-        self.curIndex = 0;
-    }
     
     //Aparecer la barra de navegación para regresar
     [self.navigationController setNavigationBarHidden:NO animated:NO];
@@ -31,20 +26,9 @@
     NSString *path = [[NSBundle mainBundle] pathForResource:@"Dict" ofType:@"plist"];
     NSDictionary *dict = [[NSDictionary alloc]initWithContentsOfFile:path];
     
-//    NSArray* words = [dict objectForKey:@"NAME"];
-//    NSString* title = words[self.curIndex];
-    NSString* title = self.selectedWord;
-    lblTitle.text = title;
+    lblTitle.text = self.selectedWord;
+    lblMeaning.text = [dict objectForKey:self.selectedWord];
 
-//    NSArray* meanings = [dict objectForKey:@"DESCRIPTION"];
-//    NSString* description = meanings[self.curIndex];
-//    lblMeaning.text = description;
-
-    NSString* meanings = [dict objectForKey:title];
-//    NSString* description = meanings[self.curIndex];
-    lblMeaning.text = meanings;
-
-    
     
     //Código Banner de Google
     self.bannerView2.adUnitID = @"ca-app-pub-9597991151956696/9024895562";
@@ -58,6 +42,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+//Obligar a que el significado empiece desde el principio del texto.
+- (void)viewDidLayoutSubviews {
+    [self.lblMeaning setContentOffset:CGPointZero animated:NO];
 }
 
 /*

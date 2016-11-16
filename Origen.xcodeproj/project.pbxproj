@@ -18,7 +18,6 @@
 		8305A0A81DD0B41E0085E50C /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8305A0A71DD0B41E0085E50C /* InfoViewController.m */; };
 		8305A0AA1DD0D4A00085E50C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8305A0A91DD0D4A00085E50C /* Launch Screen.storyboard */; };
 		833C7DE51DBC08B600078AEE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 833C7DE41DBC08B600078AEE /* GoogleService-Info.plist */; };
-		836C53551DCCB16F00DB3F82 /* Dictionary.plist in Resources */ = {isa = PBXBuildFile; fileRef = 836C53541DCCB16F00DB3F82 /* Dictionary.plist */; };
 		836C535E1DCCC22400DB3F82 /* MeaningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 836C535D1DCCC22400DB3F82 /* MeaningViewController.m */; };
 		83AD9C111DD74A1100B2F618 /* Dict.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83AD9C101DD74A1100B2F618 /* Dict.plist */; };
 /* End PBXBuildFile section */
@@ -61,7 +60,6 @@
 		8305A0A71DD0B41E0085E50C /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		8305A0A91DD0D4A00085E50C /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		833C7DE41DBC08B600078AEE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		836C53541DCCB16F00DB3F82 /* Dictionary.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Dictionary.plist; sourceTree = "<group>"; };
 		836C535C1DCCC22400DB3F82 /* MeaningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeaningViewController.h; sourceTree = "<group>"; };
 		836C535D1DCCC22400DB3F82 /* MeaningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeaningViewController.m; sourceTree = "<group>"; };
 		83AD9C101DD74A1100B2F618 /* Dict.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Dict.plist; sourceTree = "<group>"; };
@@ -170,7 +168,6 @@
 			isa = PBXGroup;
 			children = (
 				83AD9C101DD74A1100B2F618 /* Dict.plist */,
-				836C53541DCCB16F00DB3F82 /* Dictionary.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -343,7 +340,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				83AD9C111DD74A1100B2F618 /* Dict.plist in Resources */,
-				836C53551DCCB16F00DB3F82 /* Dictionary.plist in Resources */,
 				833C7DE51DBC08B600078AEE /* GoogleService-Info.plist in Resources */,
 				3F63C5391C46BC1E00D1DBF6 /* Assets.xcassets in Resources */,
 				8305A0AA1DD0D4A00085E50C /* Launch Screen.storyboard in Resources */,

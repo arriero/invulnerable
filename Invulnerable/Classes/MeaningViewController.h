@@ -11,7 +11,6 @@
 
 @interface MeaningViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *lblTitle;
-@property (assign) NSInteger curIndex;
 @property (nonatomic,strong) NSString *selectedWord;
 @property (weak, nonatomic) IBOutlet UITextView *lblMeaning;
 @property (weak, nonatomic) IBOutlet GADBannerView *bannerView2;
