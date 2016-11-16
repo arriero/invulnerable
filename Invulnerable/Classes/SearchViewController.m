@@ -17,6 +17,7 @@
 @interface SearchViewController() <UITableViewDelegate, UISearchBarDelegate>
 
 @property (assign) NSInteger selectedIndex;
+@property (strong, nonatomic) NSString* selectedWord;
 
 @property (strong, nonatomic) NSArray* words;
 @property (strong, nonatomic) NSArray* keys;
@@ -135,12 +136,14 @@ NSString *const kWordCellId = @"WordCell";
         //Conseguir el índice de la celda seleccionada
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
         //Identificar la palabra
-        NSString* selectedWord = self.filterWords[indexPath.row];
+        self.selectedWord = self.filterWords[indexPath.row];
         //Conseguir el índice de la palabra en el archivo para enviarlo, no se utiliza el de la celda porque el índice actual es de una tabla filtrada
-        self.selectedIndex = [self getIndexOfWord:selectedWord];
+        self.selectedIndex = [self getIndexOfWord:self.selectedWord];
         
         MeaningViewController *targetController = segue.destinationViewController;
         targetController.curIndex = self.selectedIndex;
+        targetController.selectedWord = self.selectedWord;
+
     }
     
     

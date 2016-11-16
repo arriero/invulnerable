@@ -28,16 +28,23 @@
     //Aparecer la barra de navegación para regresar
     [self.navigationController setNavigationBarHidden:NO animated:NO];
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"Dictionary" ofType:@"plist"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"Dict" ofType:@"plist"];
     NSDictionary *dict = [[NSDictionary alloc]initWithContentsOfFile:path];
     
-    NSArray* words = [dict objectForKey:@"NAME"];
-    NSString* title = words[self.curIndex];
+//    NSArray* words = [dict objectForKey:@"NAME"];
+//    NSString* title = words[self.curIndex];
+    NSString* title = self.selectedWord;
     lblTitle.text = title;
 
-    NSArray* meanings = [dict objectForKey:@"DESCRIPTION"];
-    NSString* description = meanings[self.curIndex];
-    lblMeaning.text = description;
+//    NSArray* meanings = [dict objectForKey:@"DESCRIPTION"];
+//    NSString* description = meanings[self.curIndex];
+//    lblMeaning.text = description;
+
+    NSString* meanings = [dict objectForKey:title];
+//    NSString* description = meanings[self.curIndex];
+    lblMeaning.text = meanings;
+
+    
     
     //Código Banner de Google
     self.bannerView2.adUnitID = @"ca-app-pub-9597991151956696/9024895562";
