@@ -19,6 +19,8 @@
 @property (assign) NSInteger selectedIndex;
 
 @property (strong, nonatomic) NSArray* words;
+@property (strong, nonatomic) NSArray* keys;
+
 @property (strong, nonatomic) NSMutableArray* filterWords;
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -38,12 +40,17 @@
     NSDictionary *dict = [[NSDictionary alloc]initWithContentsOfFile:path];
     self.words = [dict objectForKey:@"NAME"];
     
+    NSString *path2 = [[NSBundle mainBundle] pathForResource:@"Dict" ofType:@"plist"];
+    NSDictionary *dict2 = [[NSDictionary alloc]initWithContentsOfFile:path2];
+    self.keys = [dict2 allKeys];
+
     self.filterWords = [[NSMutableArray alloc] init];
-    [self.filterWords addObjectsFromArray:self.words];
+    [self.filterWords addObjectsFromArray:self.keys];
     
     self.tableView.delegate = self;
     self.searchBar.delegate = self;
 
+    
     //Código Banner de Google
     self.bannerView.adUnitID = @"ca-app-pub-9597991151956696/9024895562";
     self.bannerView.rootViewController = self;
@@ -63,7 +70,6 @@
     self.navigationController.view.backgroundColor = [UIColor clearColor];
     self.navigationController.navigationBar.backgroundColor = [UIColor clearColor];
     self.navigationController.navigationBar.tintColor = [UIColor darkGrayColor];
-    
     
     [self.tableView reloadData];
 }
@@ -147,10 +153,10 @@ NSString *const kWordCellId = @"WordCell";
     [self.filterWords removeAllObjects];
     
     if(searchText.length == 0) {
-        [self.filterWords addObjectsFromArray: self.words];
+        [self.filterWords addObjectsFromArray: self.keys];
     }
     else {
-        for (NSString* wordText in self.words) {
+        for (NSString* wordText in self.keys) {
             NSString* orgText = [wordText lowercaseString];
             NSString* searchStr = [searchText lowercaseString];
             if([orgText containsString:searchStr]) {
