@@ -109,10 +109,7 @@ NSString *const kWordCellId = @"WordCell";
 //Cuando se llama la otra pantalla
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 
-    if ([[segue identifier] isEqualToString:@"showInfo"]){
-        InfoViewController *targetController = segue.destinationViewController;
-    }
-    else{
+    if ([[segue identifier] isEqualToString:@"showMeaning"]){
         //Conseguir el índice de la celda seleccionada
         NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
         //Identificar la palabra
